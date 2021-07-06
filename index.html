@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+    <title>Projeto Helpper</title>
+
+    <!--Teste prático
+        Você deverá enviar um link do seu github com:
+        * Formulário de Cadastro de clientes contendo
+        - Nome
+        - E-mail
+        - CPF ou CNPJ
+        - Telefone
+        - CEP
+        - Logradouro
+        - Número
+        - Bairro
+        - Cidade
+        - Estado
+        * Listagem destes dados
+        * Exclusão de algum item da lista
+        Deverá ser feito em qualquer linguagem de programação, mas se você fizer isto em JavaScript ou TypeScript, será considerado um diferencial.
+        Caso conheça alguma boa prática, fique a vontade para aplicar e descrevê-la no readme de seu repositório.
+        ATENÇÃO: É melhor um teste feito do zero que demonstre seus conhecimentos do que algo reaproveitável que não mostre sua capacidade
+    -->
+</head>
+<header class="bg-light shadow p-3 mb-5 bg-white text-dark text-center py-5">
+    <img src="dev.svg" width="100px"><h1>Projeto Helpper</h1>
+    <button type="button" class="btn btn-primary btn-add float-right my-4 mr-5" data-toggle="modal" data-target="#modalRegistro">Adicionar novo cadastro</button>
+</header>
+<body>
+    <!--LISTA-->
+    <section class="col-md-12">
+        <table id="tblDados" class="container bg-light shadow p-3 mb-5 bg-white rounded table table-hover py-5 my-5">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">CEP</th>
+                <th scope="col">Logradouro</th>
+                <th scope="col">Número</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <!--MODAL-->
+    <section>
+        <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+            <input type="hidden" id="hdID">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalRegistroLabel">Novo Cadastro</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group border-bottom border-top">
+                      <label for="nome" class="col-form-label">Nome:</label>
+                      <input type="text" class="form-control" id="nome" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-form-label">E-mail:</label>
+                        <input type="text" class="form-control" id="email"  placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone" class="col-form-label">Telefone:</label>
+                        <input type="text" class="form-control" id="telefone" placeholder="">
+                      </div>
+                      <div class="form-group">
+                          <label for="cpf" class="col-form-label">CPF:</label>
+                          <input type="text" class="form-control" id="cpf"  placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="cep" class="col-form-label">CEP:</label>
+                        <input type="text" class="form-control" id="cep"  placeholder="">
+                      </div>
+                      <div class="form-group">
+                          <label for="logradouro" class="col-form-label">Logradouro:</label>
+                          <input type="text" class="form-control" id="logradouro"  placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="numero" class="col-form-label">Número:</label>
+                        <input type="text" class="form-control" id="numero" placeholder="">
+                      </div>
+                      <div class="form-group">
+                          <label for="bairro" class="col-form-label">Bairro:</label>
+                          <input type="text" class="form-control" id="bairro"  placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="cidade" class="col-form-label">Cidade:</label>
+                        <input type="text" class="form-control" id="cidade"  placeholder="">
+                      </div>
+                      <div class="form-group">
+                          <label for="estado" class="col-form-label">Estado:</label>
+                          <input type="text" class="form-control" id="estado"  placeholder="">
+                      </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button id="btnSalvar" type="button" class="btn btn-primary">Salvar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="javascript/funcoes.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+*{
+    font-family: 'Roboto Mono', monospace;
+}
+header{
+    position: relative;
+}
+
+.btn-add{
+    position: absolute;
+    top: 80%;
+    right: 7%;
+    font-weight: bold;
+}
+
+.btn-add{
+    border: 2px solid #2F4F4F;
+    background-color: #32CD32;
+    color: #fff;
+}
+
+.btn-add:hover{
+    background-color: #2F4F4F;
+}
+
+#btnSalvar{
+    border: 2px solid #2F4F4F;
+    background-color: #32CD32;
+    color: #fff;
+}
+
+.btn-editar{
+    border: 2px solid #2F4F4F;
+    background-color: #32CD32;
+    color: #fff;
+}
+
+.btn-editar:hover{
+    background-color: #2F4F4F;
+}
